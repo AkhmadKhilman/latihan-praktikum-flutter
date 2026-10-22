@@ -1,4 +1,4 @@
-package com.example.piw
+package com.example.latihan_praktikum_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 
