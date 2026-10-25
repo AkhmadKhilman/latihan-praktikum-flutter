@@ -30,7 +30,7 @@ class MyHome extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            "Aplikasi Mahasiswa",
+            "Dashboard Mahasiswa",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
           ),
         ),
