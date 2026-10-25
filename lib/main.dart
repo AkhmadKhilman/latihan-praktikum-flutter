@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.red,
+          seedColor: Colors.blue,
           brightness: Brightness.dark,
         ),
       ),
@@ -41,15 +41,16 @@ class MyHome extends StatelessWidget {
         title: Center(
           child: Text(
             "Dashboard Mahasiswa",
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: Theme.of(context).colorScheme.onPrimary),
           ),
         ),
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 80, horizontal: 26),
         child: Text(
           "Nama: Akhmad Khilman AL Khafid \nNIM: 1124160075 \nKelas: TI 24 SE-1",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900),
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
         ),
         width: 1000,
       ),
