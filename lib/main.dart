@@ -44,21 +44,16 @@ class MyHome extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              print("Masuk Menu Profile, tapi nanti yah. Hehehe");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MyProfile()),
+              );
             },
             icon: Icon(Icons.account_circle),
             color: Theme.of(context).colorScheme.onPrimaryContainer,
             hoverColor: Theme.of(context).colorScheme.secondaryContainer,
             tooltip: "Profile Menu",
-            padding: EdgeInsets.all(7.5),
           ),
-
-          // IconButton(
-          //   onPressed: () {
-          //     print("Kembali ke home");
-          //   },
-          //   icon: Icon(Icons.close),
-          // ),
         ],
 
         title: Text(
@@ -76,15 +71,18 @@ class MyHome extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 80, horizontal: 26),
 
-        child: Text(
-          "Nama: Akhmad Khilman AL Khafid \nNIM: 1124160075 \nKelas: TI 24 SE-1",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
-        ),
-
         width: 1000,
+
+        child: Text(
+          "Selamat Datang Akhmad Khilman AL Khafid - 1124160075",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
+          textAlign: TextAlign.center,
+        ),
       ),
 
       bottomNavigationBar: Container(
+        padding: EdgeInsets.all(17.3),
+        color: Theme.of(context).colorScheme.primaryContainer,
         child: Text(
           "© 2026 Akhmad Khilman Al Khafid. All rights reserved.",
           textAlign: TextAlign.center,
@@ -92,8 +90,99 @@ class MyHome extends StatelessWidget {
             color: Theme.of(context).colorScheme.onPrimaryContainer,
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MyProfile extends StatelessWidget {
+  const MyProfile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: Icon(Icons.account_circle),
+
+        title: Text(
+          "Profile Mahasiswa",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Theme.of(context).colorScheme.onSecondaryContainer,
+          ),
+        ),
+
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.logout),
+            hoverColor: Theme.of(context).colorScheme.primaryContainer,
+            tooltip: "Back to Home",
+          ),
+        ],
+
+        backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+      ),
+
+      body: Padding(
+        padding: EdgeInsetsGeometry.all(25),
+        child: Column(
+          spacing: 15,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 15),
+            Text(
+              "Data Pengguna",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+            ),
+
+            Text(
+              "Nama: Akhmad Khilman Al Khafid",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            ),
+
+            Text(
+              "NIM: 1124160075",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            ),
+
+            Text(
+              "Kelas: TI 24 SE-1",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            ),
+
+            Text(
+              "Program Studi: Teknik Informatika",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            ),
+
+            Text(
+              "Konsentrasi Software Engineering",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            ),
+
+            Text(
+              "Mata Kuliah: Aplikasi Mobile",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            ),
+          ],
+        ),
+      ),
+
+      bottomNavigationBar: Container(
         padding: EdgeInsets.all(17.3),
-        color: Theme.of(context).colorScheme.primaryContainer,
+        color: Theme.of(context).colorScheme.secondaryContainer,
+        child: Text(
+          "© 2026 Akhmad Khilman Al Khafid. All rights reserved.",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onSecondaryContainer,
+          ),
+        ),
       ),
     );
   }
